@@ -1,15 +1,11 @@
 package edu.devybh.leetcode.solutions;
 
-import edu.devybh.leetcode.Util;
-
-import java.util.Arrays;
-
 public class Solution_0001_TwoSum extends AbstractSolution {
 
     public int[] twoSum(int[] nums, int target) {
-        for (int i = 0; i < nums.length; ++i) {
+        for (int i = 0, end = nums.length; i < end; ++i) {
             int n1 = nums[i];
-            for (int j = i + 1; j < nums.length; ++j) {
+            for (int j = i + 1; j < end; ++j) {
                 int n2 = nums[j];
                 if (n1 + n2 == target) return new int[]{i, j};
             }
