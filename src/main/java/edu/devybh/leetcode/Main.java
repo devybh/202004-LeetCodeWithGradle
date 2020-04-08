@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Main {
 
     public static String packageName = "edu.devybh.leetcode.solutions";
-    public static String solutionName = "Solution_0001_TwoSum";
+    public static String solutionName = "Solution_0007_Reverse";
 
     public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException, ClassNotFoundException {
 
@@ -27,6 +27,8 @@ public class Main {
 
         // execute test
         for (AbstractSolution.TestCase testCase : testCases) {
+            System.out.println("");
+
             Object[] input = testCase.getInput();
             Util.log("input", input);
 
