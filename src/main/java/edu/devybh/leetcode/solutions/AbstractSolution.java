@@ -1,5 +1,7 @@
 package edu.devybh.leetcode.solutions;
 
+import edu.devybh.leetcode.Util;
+
 import java.lang.reflect.Array;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -92,6 +94,15 @@ public abstract class AbstractSolution {
                 list2.add(Array.get(o2, i));
             }
             return Arrays.equals(list1.toArray(), list2.toArray());
+        } else {
+            switch (o1.getClass().getTypeName()) {
+                case "java.lang.Integer":
+                    return ((Integer) o1).equals((Integer) o2);
+
+                default:
+                    Util.log("Undefined Type For Compare", o1);
+                    break;
+            }
         }
         return false;
     }

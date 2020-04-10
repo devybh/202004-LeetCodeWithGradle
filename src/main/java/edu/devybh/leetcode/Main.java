@@ -26,20 +26,26 @@ public class Main {
         ArrayList<AbstractSolution.TestCase> testCases = solution.setTestCases().getTestCases();
 
         // execute test
+        int i = -1;
         for (AbstractSolution.TestCase testCase : testCases) {
-            System.out.println("");
+            ++i;
+            Util.log("----- TestCase " + i + " Start -----");
 
             Object[] input = testCase.getInput();
             Util.log("input", input);
 
+            long startMs = System.currentTimeMillis();
             Object output = solution.getMethod().invoke(solution, input);
+            long runtime = System.currentTimeMillis() - startMs;
             Util.log("output", output);
 
             boolean compareResult = solution.compare(output, testCase.output);
             if (compareResult) {
-                Util.log("TRUE");
+                Util.log("CompareResult: True\nRuntime: " + runtime + "ms");
             } else {
+                Util.log("Compare Result: False");
                 Util.log("Expected", testCase.output);
+                break;
             }
         }
 

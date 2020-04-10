@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Util {
     public static void log(String log) {
-        String forPrint = log + " (" + getStackTraceText() + ")\n";
+        String forPrint = log + "\n  (" + getStackTraceText() + ")\n";
         System.out.println(forPrint);
     }
 
