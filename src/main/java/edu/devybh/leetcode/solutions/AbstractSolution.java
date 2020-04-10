@@ -77,12 +77,6 @@ public abstract class AbstractSolution {
     /**
      * Compare 관련
      */
-
-
-    private String getReturnTypeName() {
-        return getMethod().getReturnType().getTypeName();
-    }
-
     public boolean compare(Object o1, Object o2) {
         if (o1.getClass().isArray()) { // when array
             ArrayList<Object> list1 = new ArrayList<>();
@@ -97,7 +91,8 @@ public abstract class AbstractSolution {
         } else {
             switch (o1.getClass().getTypeName()) {
                 case "java.lang.Integer":
-                    return ((Integer) o1).equals((Integer) o2);
+                case "java.lang.String":
+                    return o1.equals(o2);
 
                 default:
                     Util.log("Undefined Type For Compare", o1);
